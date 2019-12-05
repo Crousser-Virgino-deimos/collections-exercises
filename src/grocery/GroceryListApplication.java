@@ -70,6 +70,7 @@ public class GroceryListApplication {
 
             System.out.println("Enter how many you want: ");
             System.out.println(input.getInt());
+            System.out.println("git");
 
 
             System.out.println("Would you like to enter a new item [y/n]");
