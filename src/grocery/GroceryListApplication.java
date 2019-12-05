@@ -86,6 +86,11 @@ public class GroceryListApplication {
 
             //TODO:  give the user a choice to finalize the list or add an additional item
 
+            //TODO: if they pick yes, they will be prompted if they would like to enter a new item
+
+
+
+
 
             //TODO: when finalized, present a complete list organized ALPHABETICALLY and grouped by CATEGORY including QUANTITY
 
