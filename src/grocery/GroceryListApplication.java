@@ -56,6 +56,11 @@ public class GroceryListApplication {
 
 
 
+            //TODO: if they pick yes, they will be prompted if they would like to enter a new item
+
+
+
+
 
                 //TODO: given an ordered list of grocery categories to choose from, select the category
                 //TODO: Enter name of the item
