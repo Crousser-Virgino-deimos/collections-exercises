@@ -53,14 +53,14 @@ public class GroceryListApplication {
         HashMap<String, ArrayList<String>> groceries = new HashMap<>();
 
         //grocery keys
-        groceries.put("Bakery", new ArrayList<>());
-        groceries.put("Fruit", new ArrayList<>());
-        groceries.put("Meat", new ArrayList<>());
-        groceries.put("Vegetables", new ArrayList<>());
+        groceries.put("bakery", new ArrayList<>());
+        groceries.put("fruit", new ArrayList<>());
+        groceries.put("meat", new ArrayList<>());
+        groceries.put("vegetables", new ArrayList<>());
 
-        Bakery.add("Bread");
-        Bakery.add("Cake");
-        Bakery.add("Donuts");
+        Bakery.add("bread");
+        Bakery.add("cake");
+        Bakery.add("donuts");
 
         Fruit.add("apple");
         Fruit.add("banana");
@@ -70,9 +70,9 @@ public class GroceryListApplication {
         Meat.add("chicken");
         Meat.add("sausage");
 
-        Vegetables.add("Carrot");
-        Vegetables.add("Lettuce");
-        Vegetables.add("Spinach");
+        Vegetables.add("carrot");
+        Vegetables.add("lettuce");
+        Vegetables.add("spinach");
 
 
 //
@@ -86,19 +86,21 @@ public class GroceryListApplication {
             }
             //wrong condition to make the user choose one of the categories
 
+
             //when user chooses category bakery, fruit, etc., we need to sequentially
             //call the key with the coinciding string, and store the next user input into
             //the arrayList
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            input.getString();
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("Enter name of item: ");
-            System.out.println(Bakery.add(input.getString()));
-            System.out.println(Bakery);
+//            input.getString();
+            for (String bakery : groceries.keySet()) {
+                System.out.println(groceries.get(input.getString()));
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("Enter name of item: ");
+                System.out.println(groceries);
+            }
 
             //conditional for user input
             //add accordingly to string
-
 
 
             System.out.println("Enter how many you want: ");
@@ -110,6 +112,38 @@ public class GroceryListApplication {
             System.out.println("Would you like to enter a new item [y/n]");
             input.yesNo();
 
+        } else if (input.yesNo()) {
+            System.out.println("Select a category: ");
+            for (String grocery : groceries.keySet()) {
+                System.out.println(grocery);
+
+            }
+            //wrong condition to make the user choose one of the categories
+
+
+            //when user chooses category bakery, fruit, etc., we need to sequentially
+            //call the key with the coinciding string, and store the next user input into
+            //the arrayList
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            input.getString();
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("fruit Enter name of item: ");
+            System.out.println(Fruit.add(input.getString()));
+            System.out.println(Fruit);
+
+            //conditional for user input
+            //add accordingly to string
+
+
+            System.out.println("Enter how many you want: ");
+
+            System.out.println(input.getInt());
+            System.out.println("git");
+
+
+            System.out.println("Would you like to enter a new item [y/n]");
+            input.yesNo();
+        }
 
             //for each loop for user input
 
@@ -127,7 +161,6 @@ public class GroceryListApplication {
             //TODO: when finalized, present a complete list organized ALPHABETICALLY and grouped by CATEGORY including QUANTITY
 
         }
-    }
 
 
 //    public static Map totalOrder(HashMap checkout) {
@@ -135,4 +168,6 @@ public class GroceryListApplication {
 //        return map;
 //
 //    }
-}
+    }
+
+
