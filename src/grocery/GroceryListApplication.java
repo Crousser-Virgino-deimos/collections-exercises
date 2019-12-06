@@ -1,7 +1,7 @@
 package grocery;
 
+import java.util.*;
 import util.Input;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,31 +22,60 @@ public class GroceryListApplication {
         this.item = item;
         this.groceries = new ArrayList<>();
     }
-    public void create(String name, String category, int quantity){
+
+    public void create(String name, String category, int quantity) {
         this.name = name;
         this.category = category;
         this.quantity = quantity;
     }
 
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        Scanner scannerInt = new Scanner(System.in);
         Input input = new Input();
-        boolean exited = false;
+        ArrayList<String> Bakery = new ArrayList<>();
+        ArrayList<String> Fruit = new ArrayList<>();
+        ArrayList<String> Meat = new ArrayList<>();
+        ArrayList<String> Vegetables = new ArrayList<>();
 //TODO: if they pick yes, they will be prompted if they would like to enter a new item
         //prompt user if they want a new item
         System.out.println("Would you like to make a new list? [y/n]");
 
 
         //declare hash map for groceries
+//        HashMap<String, ArrayList> count = new HashMap<>();
+//
+//        HashMap<String, Integer> bakeryCount = new HashMap<>();
+//        HashMap<String, Integer> fruitCount = new HashMap<>();
+//        HashMap<String, Integer> meatCount = new HashMap<>();
+//        HashMap<String, Integer> vegetablesCount = new HashMap<>();
+//        HashMap<String, Integer> finalCount = new HashMap<>();
         HashMap<String, ArrayList<String>> groceries = new HashMap<>();
 
         //grocery keys
-        groceries.put("Bakery", new ArrayList<String>());
-        groceries.put("Fruit", new ArrayList<String>());
-        groceries.put("Meat", new ArrayList<String>());
-        groceries.put("Vegetables", new ArrayList<String>());
+        groceries.put("Bakery", new ArrayList<>());
+        groceries.put("Fruit", new ArrayList<>());
+        groceries.put("Meat", new ArrayList<>());
+        groceries.put("Vegetables", new ArrayList<>());
+
+        Bakery.add("Bread");
+        Bakery.add("Cake");
+        Bakery.add("Donuts");
+
+        Fruit.add("apple");
+        Fruit.add("banana");
+        Fruit.add("orange");
+
+        Meat.add("beef");
+        Meat.add("chicken");
+        Meat.add("sausage");
+
+        Vegetables.add("Carrot");
+        Vegetables.add("Lettuce");
+        Vegetables.add("Spinach");
 
 
+//
         if (input.yesNo()) {
             //prompt user for category
             //TODO: if the user's pick yes, they should be given the following three prompts:
@@ -76,6 +105,7 @@ public class GroceryListApplication {
             System.out.println("Would you like to enter a new item [y/n]");
             input.yesNo();
 
+
             //for each loop for user input
 
 
@@ -89,11 +119,15 @@ public class GroceryListApplication {
             //TODO: if they pick yes, they will be prompted if they would like to enter a new item
 
 
-
-
-
             //TODO: when finalized, present a complete list organized ALPHABETICALLY and grouped by CATEGORY including QUANTITY
 
         }
+    }
+
+
+    public static Map totalOrder(HashMap checkout) {
+        Map<String, Float> map = new TreeMap<>(checkout);
+        return map;
+
     }
 }
