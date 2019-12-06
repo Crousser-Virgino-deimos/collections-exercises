@@ -24,7 +24,7 @@ public class GroceryListApplication {
     }
 
     public void create(String name, String category, int quantity) {
-        this.name = name;
+        this.name = item;
         this.category = category;
         this.quantity = quantity;
     }
@@ -93,11 +93,16 @@ public class GroceryListApplication {
             input.getString();
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("Enter name of item: ");
+            System.out.println(Bakery.add(input.getString()));
+            System.out.println(Bakery);
 
-            System.out.println(groceries);
+            //conditional for user input
+            //add accordingly to string
+
 
 
             System.out.println("Enter how many you want: ");
+
             System.out.println(input.getInt());
             System.out.println("git");
 
@@ -125,9 +130,9 @@ public class GroceryListApplication {
     }
 
 
-    public static Map totalOrder(HashMap checkout) {
-        Map<String, Float> map = new TreeMap<>(checkout);
-        return map;
-
-    }
+//    public static Map totalOrder(HashMap checkout) {
+//        Map<String, Float> map = new TreeMap<>(checkout);
+//        return map;
+//
+//    }
 }
